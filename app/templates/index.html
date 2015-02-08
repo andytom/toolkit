@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block body %}
+<div class="header">
+    <h1>Toolkit</h1>
+    <h2>A collection of basic tools</h2>
+</div>
+<div class="pure-g content">
+{%- for name, details in g.TOOLS| dictsort %}
+  <div class="pure-u-1-2">
+    <h2 class="content-subhead">
+    <a href="{{ details['url'] }}">{{ name }}</a></h2>
+    <p> {{ details['description'] }}</p>
+  </div>
+{% endfor -%}
+</div>
+{% endblock %}

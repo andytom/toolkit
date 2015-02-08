@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block body %}
+<div class="content">
+<h2 class="content-subhead">Table Maker</h2>
+<form action="" method="POST" class="pure-form pure-form-stacked">
+    <fieldset>
+        {{ form.csrf_token }}
+
+        <div class="pure-control-group">
+            {{ form.content.label }}
+        {#- required=true is to add the required attribue changing true to false does nothing #}
+            {{ form.content(rows=10, class_='pure-input-1', required='true') }}
+        </div>
+
+        <div class="pure-control-group">
+            {{ form.table_align.label }}
+            {{ form.table_align }}
+        </div>
+        
+        <button class="pure-button pure-button-primary" type=submit>Go!</button>
+    </fieldset>
+</form>
+</div>
+{% endblock %}

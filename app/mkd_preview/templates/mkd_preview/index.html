@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% block body %}
+
+<div class="content">
+  <h2 class="content-subhead">Markdown Live Preview</h2>
+  <div class="pure-form pure-g">
+    <div class="pure-u-12-24">
+      <textarea id="inputText" class="pure-input-1" type="text" rows=20>
+# Title
+
+Some example text
+
+## Sub Title
+
+Some code
+
+~~~
+for i in range(10):
+    print i
+~~~
+
+## Another Sub Title
+
+A link to the [Github Flavoured Markdown documentaion](https://help.github.com/articles/github-flavored-markdown/).</textarea>
+    </div>
+    <div class="pure-u-1-24">
+    </div>
+    <div class="pure-u-11-24">
+     <div id="markdownPreview">
+     </div> 
+    </div>
+  </div>
+</div>
+
+<script src="{{ url_for('static', filename='3rd_party/js/marked.min.js') }}"></script>
+<script>
+(function() {
+  var inputText = document.getElementById('inputText'),
+      preview = document.getElementById('markdownPreview');
+      
+  inputText.onkeyup = function() {
+    preview.innerHTML = marked(inputText.value);
+  };
+  // Trigger the `onkeyup` event
+  inputText.onkeyup.call(inputText);
+}());
+</script>
+{% endblock %}

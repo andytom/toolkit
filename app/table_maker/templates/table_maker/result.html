@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% block body %}
+<div class="content">
+    <h2 class="content-subhead">Output</h2>
+    <button class="pure-button" onclick="selectText('result')">Select All</button>
+    <pre id="result" class="code">{{ table }}</pre>
+</div>
+{% endblock %}

@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+{%- if g.title %}
+    <title>Toolkit - {{ g.title }}</title>
+{%- else %}
+    <title>Toolkit</title>
+{%- endif %}
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='3rd_party/css/pure-min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/code.css') }}">
+    <!--[if lte IE 8]>
+        <link rel="stylesheet" href="{{ url_for('static', filename='3rd_party/css/side-menu-old-ie.css') }}">
+    <![endif]-->
+    <!--[if gt IE 8]><!-->
+        <link rel="stylesheet" href="{{ url_for('static', filename='3rd_party/css/side-menu.css') }}">
+    <!--<![endif]-->
+</head>
+<body>
+<div id="layout">
+    <!-- Menu toggle -->
+    <a href="#menu" id="menuLink" class="menu-link">
+        <!-- Hamburger icon -->
+        <span></span>
+    </a>
+
+    <div id="menu">
+        <div class="pure-menu pure-menu-open">
+            <a class="pure-menu-heading" href="{{ url_for('index') }}">Toolkit</a>
+            <ul>
+                {%- for name, details in g.TOOLS | dictsort %}
+                <li {% if request.path.startswith(details['url']) %}class="menu-item-divided pure-menu-selected"{% endif %}>
+                  <a href="{{ details['url'] }}">{{ name }}</a>
+                </li>
+                {%- endfor %}
+            </ul>
+        </div>
+    </div>
+
+    <div id="main">
+    {% block body %}{% endblock %}
+    </div>
+</div>
+
+<script src="{{ url_for('static', filename='3rd_party/js/ui.js') }}"></script>
+<script src="{{ url_for('static', filename='js/select.js') }}"></script>
+
+</body>
+</html>
