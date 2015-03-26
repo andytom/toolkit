@@ -10,9 +10,6 @@ code {
     background: rgb(250, 250, 250);
 }
 
-code {
-    padding: 0.2em 0.4em;
-}
 .content p code {
     font-size: 90%;
 }
