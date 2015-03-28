@@ -15,7 +15,7 @@ manager.add_command("runserver", server)
 
 
 @manager.command
-def run_tests():
+def runtests():
     """Runs all the tests"""
     tests = unittest.TestLoader().discover('./app')
     results = unittest.TextTestRunner().run(tests)
