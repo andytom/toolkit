@@ -16,15 +16,19 @@ $ git clone https://github.com/andytom/toolkit.git
 $ mkvirtualenv toolkit
 $ cd toolkit
 $ pip install -r requirements.txt
-$ python run_dev_server.py
+$ python manage.py runserver
 ~~~
 
 
 ## Testing
 
+You can run all the test locally using.
+
 ~~~
-$ python run_tests.py
+$ python manage.py runtests
 ~~~
+
+These tests are also run by [TravisCI](https://travis-ci.org/andytom/toolkit).
 
 
 ## TODO
