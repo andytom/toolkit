@@ -42,6 +42,9 @@ def process_string(csv_string, table_align='l'):
     dialect = csv.Sniffer().sniff(csv_io.read(1024))
     csv_io.seek(0)
 
+    dialect.delimiter = str(dialect.delimiter)
+    dialect.quotechar = str(dialect.quotechar)
+
     reader = unicode_csv_reader(csv_io, dialect)
 
     table = prettytable.PrettyTable()
