@@ -1,0 +1,20 @@
+Name,State,Status,Provisioned Space,Used Space,Host CPU,Host Mem,Guest Mem - %,IP Address
+machine01,Powered Off,Normal,56.32  GB,8.86  GB,0 MHz,0 MB,0,
+machine01,Powered Off,Normal,66.25  GB,36.84  GB,0 MHz,0 MB,0,
+machine02,Powered Off,Normal,66.25  GB,36.39  GB,0 MHz,0 MB,0,
+machine02,Powered Off,Normal,32.25  GB,4.6  GB,0 MHz,0 MB,0,
+machine02,Powered Off,Normal,56.32  GB,9.23  GB,0 MHz,0 MB,0,
+machine01,Powered On,Normal,32.11  GB,6.12  GB,0 MHz,"1,177 MB",2,10.6.130.20
+machine01,Powered On,Normal,56.74  GB,40.54  GB,0 MHz,"4,682 MB",0,10.6.130.21
+machine02,Powered On,Normal,56.74  GB,32.3  GB,0 MHz,"5,319 MB",0,10.6.130.22
+machine01,Powered On,Normal,42.11  GB,18.33  GB,0 MHz,"3,370 MB",0,10.6.130.23
+machine01,Powered On,Normal,32.11  GB,7.55  GB,0 MHz,"1,482 MB",0,10.6.130.24
+machine01,Powered On,Normal,32.11  GB,6.63  GB,0 MHz,"1,545 MB",0,10.6.130.25
+machine01,Powered On,Normal,34.11  GB,9.54  GB,0 MHz,"1,281 MB",0,10.6.130.26
+machine01,Powered On,Normal,34.11  GB,12.2  GB,25 MHz,"2,301 MB",0,10.6.130.27
+machine01,Powered On,Normal,34.11  GB,10.54  GB,285 MHz,"1,048 MB",3,10.6.130.28
+machine02,Powered On,Normal,34.11  GB,9.77  GB,0 MHz,"1,127 MB",0,10.6.130.29
+machine01,Powered On,Normal,32.11  GB,7.79  GB,0 MHz,"1,419 MB",3,10.6.130.30
+machine01,Powered Off,Normal,32.25  GB,4.67  GB,0 MHz,0 MB,0,
+machine03,Powered Off,Normal,32.25  GB,4.76  GB,0 MHz,0 MB,0,
+machine03,Powered On,Normal,104.11  GB,36.42  GB,25 MHz,"9,962 MB",1,10.6.130.38
