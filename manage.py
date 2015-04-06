@@ -18,7 +18,7 @@ manager.add_command("runserver", server)
 def runtests():
     """Runs all the tests"""
     tests = unittest.TestLoader().discover('./app')
-    results = unittest.TextTestRunner().run(tests)
+    results = unittest.TextTestRunner(verbosity=2).run(tests)
 
 
 if __name__ == "__main__":

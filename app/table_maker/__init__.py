@@ -37,11 +37,13 @@ def utf_8_encoder(unicode_csv_data):
 
 def process_string(csv_string, table_align='l'):
     """Take a raw csv string and convert it into a table"""
-    csv_io = StringIO(csv_string)
+    csv_io = StringIO(csv_string.strip())
 
     dialect = csv.Sniffer().sniff(csv_io.read(1024))
     csv_io.seek(0)
 
+    # csv reader expects the dialect delimiter and quotechar to both be a str
+    # object not a unicode object.
     dialect.delimiter = str(dialect.delimiter)
     dialect.quotechar = str(dialect.quotechar)
 
@@ -64,7 +66,7 @@ def process_string(csv_string, table_align='l'):
 #-----------------------------------------------------------------------------#
 class csv_form(Form):
     # TODO - Write a validator for the CSV string
-    content = TextAreaField('CSV string', validators=[Required()])
+    csv_string = TextAreaField('CSV string', validators=[Required()])
     table_align = SelectField('Table Alignment',
                               choices=[
                                 ('l', 'Left'),
@@ -81,6 +83,6 @@ def index():
     form = csv_form()
 
     if form.validate_on_submit():
-        table = process_string(form.content.data, form.table_align.data)
+        table = process_string(form.csv_string.data, form.table_align.data)
         return render_template('table_maker/result.html', table=table)
     return render_template('table_maker/index.html', form=form)

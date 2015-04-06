@@ -7,9 +7,9 @@
         {{ form.csrf_token }}
 
         <div class="pure-control-group">
-            {{ form.content.label }}
+            {{ form.csv_string.label }}
         {#- required=true is to add the required attribue changing true to false does nothing #}
-            {{ form.content(rows=10, class_='pure-input-1', required='true') }}
+            {{ form.csv_string(rows=10, class_='pure-input-1', required='true') }}
         </div>
 
         <div class="pure-control-group">
