@@ -12,7 +12,7 @@ class BaseTestCase(TestCase):
         return app
 
 
-class mkd_previewTestCase(BaseTestCase):
+class AppTestCase(BaseTestCase):
     def test_page_load(self):
         rv = self.client.get("/")
         self.assertEqual(rv.status_code, 200)
