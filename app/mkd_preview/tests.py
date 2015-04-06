@@ -16,3 +16,4 @@ class AppTestCase(BaseTestCase):
     def test_page_load(self):
         rv = self.client.get("/")
         self.assertEqual(rv.status_code, 200)
+        self.assertTrue("Markdown Live Preview" in rv.data)
