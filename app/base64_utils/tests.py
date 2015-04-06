@@ -8,7 +8,7 @@ class BaseTestCase(TestCase):
     def create_app(self):
         app = Flask(__name__)
         app.config['TESTING'] = True
-        app.config['SECRET_KEY'] = 'TEST'
+        app.config['WTF_CSRF_ENABLED'] = False
         app.register_blueprint(base64_utils.base64_utils)
         return app
 
