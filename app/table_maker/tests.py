@@ -1,10 +1,24 @@
 import codecs
 import os
-import unittest
+from flask import Flask
+from flask.ext.testing import TestCase
+
 import table_maker
 
 
-class ProcessStringTestCase(unittest.TestCase):
+class BaseTestCase(TestCase):
+    def create_app(self):
+        app = Flask(__name__)
+        app.config['TESTING'] = True
+        app.config['SECRET_KEY'] = 'TEST'
+        app.register_blueprint(table_maker.table_maker)
+        return app
+
+
+#-----------------------------------------------------------------------------#
+# Helper Function Test Cases
+#-----------------------------------------------------------------------------#
+class ProcessStringTestCase(BaseTestCase):
     def _test_from_file(self, filename, **options):
         """
         Helper method to wrap the running of tests from a file.
@@ -45,3 +59,12 @@ class ProcessStringTestCase(unittest.TestCase):
 
     def test_alignment_right(self):
         self._test_from_file('alignment_r', table_align='r')
+
+
+#-----------------------------------------------------------------------------#
+# Blueprint Test Cases
+#-----------------------------------------------------------------------------#
+class AppTestCase(BaseTestCase):
+    def test_page_load(self):
+        rv = self.client.get("/")
+        self.assertEqual(rv.status_code, 200)
