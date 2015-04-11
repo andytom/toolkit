@@ -20,16 +20,28 @@ class BaseTestCase(TestCase):
 
 
 class ProcessBase64TestCase(BaseTestCase):
+    def _guess_extention(self, name):
+        filename = self._gen_full_path(name)
+        with open(filename, 'rb') as f:
+            res = base64_utils.guess_extention(f.read())
+        return res
+
     def test_creates_unique_filenames(self):
         f = base64_utils.create_filename('.txt')
         g = base64_utils.create_filename('.txt')
         self.assertFalse(f == g)
 
     def test_guess_extention_txt(self):
-        filename = self._gen_full_path('test.txt')
-        with open(filename, 'rb') as f:
-            res = base64_utils.guess_extention(f.read())
+        res = self._guess_extention('test.txt')
         self.assertEqual(res, '.txt')
+
+    def test_guess_extention_doc(self):
+        res = self._guess_extention('test.doc')
+        self.assertEqual(res, '.doc')
+
+    def test_guess_extention_pdf(self):
+        res = self._guess_extention('test.pdf')
+        self.assertEqual(res, '.pdf')
 
 
 class AppTestCase(BaseTestCase):
