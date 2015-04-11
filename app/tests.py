@@ -16,6 +16,7 @@ class AppTestCase(TestCase):
     def test_404(self):
         rv = self.client.get("/not/a/real/page")
         self.assertEqual(rv.status_code, 404)
+        self.assertTrue('404 - Not Found' in rv.data)
 
     def test_mkd_preview_registered(self):
         rv = self.client.get("/mkd_preview/")
