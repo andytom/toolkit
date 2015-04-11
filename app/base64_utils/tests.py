@@ -19,6 +19,9 @@ class BaseTestCase(TestCase):
         return os.path.join(resources, filename)
 
 
+#-----------------------------------------------------------------------------#
+# Helper Functions Test Cases
+#-----------------------------------------------------------------------------#
 class ProcessBase64TestCase(BaseTestCase):
     def _guess_extention(self, name):
         filename = self._gen_full_path(name)
@@ -44,6 +47,9 @@ class ProcessBase64TestCase(BaseTestCase):
         self.assertEqual(res, '.pdf')
 
 
+#-----------------------------------------------------------------------------#
+# Blueprint Test Cases
+#-----------------------------------------------------------------------------#
 class AppTestCase(BaseTestCase):
     def test_page_load(self):
         rv = self.client.get("/")

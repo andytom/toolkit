@@ -30,7 +30,7 @@ class BaseTestCase(TestCase):
 
 
 #-----------------------------------------------------------------------------#
-# Helper Function Test Cases
+# Helper Functions Test Cases
 #-----------------------------------------------------------------------------#
 class ProcessStringTestCase(BaseTestCase):
     def _test_from_file(self, filename, **options):
@@ -91,4 +91,3 @@ class AppTestCase(BaseTestCase):
     def test_empty_form_submit(self):
         rv = self.client.post('/')
         self.assertFalse('Output' in rv.data)
-
