@@ -4,11 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-{%- if g.title %}
-    <title>Toolkit - {{ g.title }}</title>
-{%- else %}
-    <title>Toolkit</title>
-{%- endif %}
+    <title>{% block title %}Toolkit{% endblock %}</title>
 
     <link rel="stylesheet" href="{{ url_for('static', filename='3rd_party/css/pure-min.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/code.css') }}">
