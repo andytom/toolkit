@@ -1,3 +1,12 @@
+# -*- coding: utf-8 -*-
+"""
+    manage.py
+    ~~~~~~~~~
+    Mangement commands for Toolkit.
+
+    :copyright: (c) 2015 by Thomas O'Donnell.
+    :license: BSD, see LICENSE for more details.
+"""
 import unittest
 from flask.ext.script import Manager, Server
 from app import app

@@ -9,7 +9,8 @@ Toolkit is a basic collection of small tools that might be useful.
 ## Running toolkit
 
 You can get toolkit up and running on [localhost:5000](http://localhost:5000/)
-using the following instructions.
+using the following instructions. The following assumes you have python,
+pip, virtualenv, and virtualenvwrapper installed.
 
 ~~~
 $ git clone https://github.com/andytom/toolkit.git
@@ -22,22 +23,18 @@ $ python manage.py runserver
 
 ## Testing
 
-You can run all the test locally using.
+You can run all the test locally using manage.py.
 
 ~~~
 $ python manage.py runtests
 ~~~
 
-These tests are also run by [TravisCI](https://travis-ci.org/andytom/toolkit).
+These tests are also run automatically by [TravisCI](https://travis-ci.org/andytom/toolkit).
 
 
 ## TODO
-- [ ] Write README and set License
+- [x] Write README and set License
 - [x] Write Tests
- - [x] app
- - [x] base64_utils
- - [x] mkd_preview
- - [x] table_maker
 - [ ] Add logging and Doc strings
  - [ ] app
  - [ ] base64_utils
@@ -48,3 +45,7 @@ These tests are also run by [TravisCI](https://travis-ci.org/andytom/toolkit).
  - [ ] Base64 Utils
 
 ## License
+Toolkit is licensed under the BSB license (See LICENSE) for more details.
+
+This doesn't include 3rd Party code in ```app/static/3rd_party```, these files
+are licenced under their own licences.

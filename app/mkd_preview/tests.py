@@ -1,3 +1,12 @@
+# -*- coding: utf-8 -*-
+"""
+    mkd_preview.tests
+    ~~~~~~~~~~~~~~~~~
+    Tests for mkd_preview.
+
+    :copyright: (c) 2015 by Thomas O'Donnell.
+    :license: BSD, see LICENSE for more details.
+"""
 from flask import Flask
 from flask.ext.testing import TestCase
 

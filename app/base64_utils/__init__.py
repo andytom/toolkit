@@ -1,3 +1,12 @@
+# -*- coding: utf-8 -*-
+"""
+    base64_util
+    ~~~~~~~~~~~
+    Blueprint for working with Base64 encoded files.
+
+    :copyright: (c) 2015 by Thomas O'Donnell.
+    :license: BSD, see LICENSE for more details.
+"""
 import uuid
 import base64
 import StringIO

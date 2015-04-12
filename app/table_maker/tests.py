@@ -1,3 +1,12 @@
+# -*- coding: utf-8 -*-
+"""
+    table_maker.tests
+    ~~~~~~~~~~~~~~~~~
+    Tests for table_maker.
+
+    :copyright: (c) 2015 by Thomas O'Donnell.
+    :license: BSD, see LICENSE for more details.
+"""
 import codecs
 import os
 from flask import Flask

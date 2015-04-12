@@ -1,3 +1,12 @@
+# -*- coding: utf-8 -*-
+"""
+    tests.py
+    ~~~~~~~~
+    Application tests for Toolkit.
+
+    :copyright: (c) 2015 by Thomas O'Donnell.
+    :license: BSD, see LICENSE for more details.
+"""
 from flask.ext.testing import TestCase
 
 import app
