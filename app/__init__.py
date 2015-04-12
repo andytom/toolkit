@@ -1,3 +1,12 @@
+# -*- coding: utf-8 -*-
+"""
+    toolkit
+    ~~~~~~~
+    Toolkit is a basic collection of small tools that might be useful.
+
+    :copyright: (c) 2015 by Thomas O'Donnell.
+    :license: BSD, see LICENSE for more details.
+"""
 #-----------------------------------------------------------------------------#
 # Setup
 #-----------------------------------------------------------------------------#

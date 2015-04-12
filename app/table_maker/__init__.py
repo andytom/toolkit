@@ -1,3 +1,12 @@
+# -*- coding: utf-8 -*-
+"""
+    table_maker
+    ~~~~~~~~~~~
+    Blueprint for converting CSV files into Tables.
+
+    :copyright: (c) 2015 by Thomas O'Donnell.
+    :license: BSD, see LICENSE for more details.
+"""
 import csv
 from StringIO import StringIO
 from flask import Blueprint, render_template, g

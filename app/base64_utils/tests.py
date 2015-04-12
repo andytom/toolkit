@@ -1,3 +1,12 @@
+# -*- coding: utf-8 -*-
+"""
+    base64_util.tests
+    ~~~~~~~~~~~~~~~~~
+    Tests for base64_utils.
+
+    :copyright: (c) 2015 by Thomas O'Donnell.
+    :license: BSD, see LICENSE for more details.
+"""
 import base64
 import os
 from flask import Flask
