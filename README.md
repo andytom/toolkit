@@ -32,12 +32,17 @@ These tests are also run by [TravisCI](https://travis-ci.org/andytom/toolkit).
 
 
 ## TODO
-- [ ] Write README
+- [ ] Write README and set License
 - [x] Write Tests
  - [x] app
  - [x] base64_utils
  - [x] mkd_preview
  - [x] table_maker
+- [ ] Add logging and Doc strings
+ - [ ] app
+ - [ ] base64_utils
+ - [ ] mkd_preview
+ - [ ] table_maker
 - [ ] Custom Validators
  - [ ] Table Maker
  - [ ] Base64 Utils
