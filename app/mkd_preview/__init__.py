@@ -22,11 +22,6 @@ for i in range(10):
 A link to the [Github Flavoured Markdown documentaion](https://help.github.com/articles/github-flavored-markdown/)."""
 
 
-@mkd_preview.before_request
-def before_request():
-    g.title = 'Markdown Preview'
-
-
 @mkd_preview.route('/')
 def index():
     return render_template('mkd_preview/index.html',

@@ -11,14 +11,6 @@ table_maker = Blueprint('table_maker', __name__, template_folder='templates')
 
 
 #-----------------------------------------------------------------------------#
-# Hooks
-#-----------------------------------------------------------------------------#
-@table_maker.before_request
-def before_request():
-    g.title = 'Table Maker'
-
-
-#-----------------------------------------------------------------------------#
 # Helper methods
 #-----------------------------------------------------------------------------#
 def unicode_csv_reader(unicode_csv_data, dialect=csv.excel, **kwargs):
