@@ -6,6 +6,9 @@
 
 Toolkit is a basic collection of small tools that might be useful.
 
+It is based on the Python [Flask framework](http://flask.pocoo.org/) and uses
+[PureCSS](http://purecss.io/) to look nice.
+
 ## Running toolkit
 
 You can get toolkit up and running on [localhost:5000](http://localhost:5000/)
@@ -43,6 +46,7 @@ These tests are also run automatically by [TravisCI](https://travis-ci.org/andyt
 - [ ] Custom Validators
  - [ ] Table Maker
  - [ ] Base64 Utils
+
 
 ## License
 Toolkit is licensed under the BSB license (See LICENSE) for more details.
