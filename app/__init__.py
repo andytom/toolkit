@@ -27,6 +27,9 @@ app.register_blueprint(mkd_preview, url_prefix='/mkd_preview')
 #-----------------------------------------------------------------------------#
 @app.before_request
 def before_request():
+    """Pre-request hook. Set the g.TOOLS dict to the each of the tools that
+       have been set up.
+    """
     g.TOOLS = {
         'Base64 Utilities': {
             'url': url_for('base64_utils.index'),
@@ -48,9 +51,19 @@ def before_request():
 #-----------------------------------------------------------------------------#
 @app.route('/')
 def index():
+    """Index Page
+
+        :returns: The rendered index template.
+    """
     return render_template('index.html')
 
 
 @app.errorhandler(404)
-def page_not_found(e):
+def page_not_found(error):
+    """Generic 404 error page.
+
+        :param error: An exception from the error.
+
+        :returns: The rendered 404 error template.
+    """
     return render_template('404.html'), 404
