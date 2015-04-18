@@ -9,17 +9,24 @@
     <fieldset>
         {{ form.csrf_token }}
 
-        <div class="pure-control-group">
-            {{ form.csv_string.label }}
-        {#- required=true is to add the required attribue changing true to false does nothing #}
-            {{ form.csv_string(rows=10, class_='pure-input-1', required='true') }}
+        <div class="pure-g">
+            <div class="pure-control-group pure-u-1 pure-u-md-1">
+                {{ form.csv_string.label }}
+            {#- required=true is to add the required attribue changing true to false does nothing #}
+                {{ form.csv_string(rows=10, class_='pure-input-1', required='true') }}
+            </div>
+
+            <div class="pure-control-group pure-u-1-3 pure-u-md-1-3">
+                {{ form.table_align.label }}
+                {{ form.table_align }}
+            </div>
+
+            <div class="pure-control-group pure-u-1-3 pure-u-md-1-3">
+                {{ form.add_header.label }}
+                {{ form.add_header }}
+            </div>
         </div>
 
-        <div class="pure-control-group">
-            {{ form.table_align.label }}
-            {{ form.table_align }}
-        </div>
-        
         <button class="pure-button pure-button-primary" type=submit>Go!</button>
     </fieldset>
 </form>

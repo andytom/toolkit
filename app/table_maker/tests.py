@@ -73,6 +73,12 @@ class ProcessStringTestCase(BaseTestCase):
     def test_alignment_right(self):
         self._test_from_file('alignment_r', table_align='r')
 
+    def test_no_header(self):
+        self._test_from_file('no_header', add_header=False)
+
+    def test_alignment_center_no_headers(self):
+        self._test_from_file('alignment_c_no_header', table_align='c',
+                             add_header=False)
 
 #-----------------------------------------------------------------------------#
 # Blueprint Test Cases
@@ -86,14 +92,28 @@ class AppTestCase(BaseTestCase):
     def test_valid_form_submit(self):
         csv, out = self._load_data_from_file('alignment_l')
         rv = self.client.post('/',
-            data={'csv_string':csv, 'table_align':'l'})
+            data={'csv_string':csv, 'table_align':'l', 'add_header':'true'})
         self.assertEqual(rv.status_code, 200)
         self.assertTrue(out in rv.data)
 
-    def test_valid_form_submit_alignment(self):
+    def test_valid_form_submit_no_header(self):
+        csv, out = self._load_data_from_file('no_header')
+        rv = self.client.post('/',
+            data={'csv_string':csv, 'table_align':'l', 'add_header':'false'})
+        self.assertEqual(rv.status_code, 200)
+        self.assertTrue(out in rv.data)
+
+    def test_valid_form_submit_alignment_and_header(self):
         csv, out = self._load_data_from_file('alignment_c')
         rv = self.client.post('/',
-            data={'csv_string':csv, 'table_align':'c'})
+            data={'csv_string':csv, 'table_align':'c', 'add_header':'true'})
+        self.assertEqual(rv.status_code, 200)
+        self.assertTrue(out in rv.data)
+
+    def test_valid_form_submit_header(self):
+        csv, out = self._load_data_from_file('alignment_c_no_header')
+        rv = self.client.post('/',
+            data={'csv_string':csv, 'table_align':'c', 'add_header':'false'})
         self.assertEqual(rv.status_code, 200)
         self.assertTrue(out in rv.data)
 
