@@ -14,6 +14,7 @@ import app
 
 class AppTestCase(TestCase):
     def create_app(self):
+        app.app.config['TESTING'] = True
         return app.app
 
     def test_index_load(self):
