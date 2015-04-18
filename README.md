@@ -37,11 +37,7 @@ These tests are also run automatically by [TravisCI](https://travis-ci.org/andyt
 - [x] Write README and set License
 - [x] Write Tests
 - [x] Add Doc strings
-- [ ] Add logging
- - [x] app
- - [x] base64_utils
- - [x] mkd_preview
- - [ ] table_maker
+- [x] Add logging
 - [ ] Custom Validators
  - [ ] Table Maker
  - [ ] Base64 Utils
