@@ -9,7 +9,7 @@
 """
 import csv
 from StringIO import StringIO
-from flask import Blueprint, render_template, g
+from flask import Blueprint, render_template
 from flask_wtf import Form
 import prettytable
 from wtforms import TextField, TextAreaField, SelectField
@@ -44,7 +44,7 @@ def utf_8_encoder(unicode_csv_data):
 
 def process_string(csv_string, table_align='l'):
     """Take a raw csv string and convert it into a table.
-    
+
        :param csv_string: A CSV string to be converted into a table.
        :param table_align: The alignment for the contents of the table.
                            Valid arguments are 'l', 'c' and 'r'.

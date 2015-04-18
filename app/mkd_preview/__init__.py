@@ -7,7 +7,7 @@
     :copyright: (c) 2015 by Thomas O'Donnell.
     :license: BSD, see LICENSE for more details.
 """
-from flask import Blueprint, render_template, g, current_app
+from flask import Blueprint, render_template, current_app
 
 
 mkd_preview = Blueprint('mkd_preview', __name__, template_folder='templates')

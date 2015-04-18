@@ -12,7 +12,7 @@ import base64
 import StringIO
 import magic
 import mimetypes
-from flask import Blueprint, render_template, g, send_file
+from flask import Blueprint, render_template, send_file
 from flask_wtf import Form
 from wtforms import TextField, TextAreaField
 from wtforms.validators import Required
