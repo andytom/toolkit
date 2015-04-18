@@ -39,7 +39,7 @@ These tests are also run automatically by [TravisCI](https://travis-ci.org/andyt
 - [x] Add Doc strings
 - [ ] Add logging
  - [x] app
- - [ ] base64_utils
+ - [x] base64_utils
  - [x] mkd_preview
  - [ ] table_maker
 - [ ] Custom Validators
