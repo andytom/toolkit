@@ -38,7 +38,7 @@ These tests are also run automatically by [TravisCI](https://travis-ci.org/andyt
 - [x] Write Tests
 - [ ] Add Doc strings
  - [x] app
- - [ ] base64_utils
+ - [x] base64_utils
  - [x] mkd_preview
  - [ ] table_maker
 - [ ] Add logging
