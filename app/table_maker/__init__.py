@@ -23,6 +23,9 @@ table_maker = Blueprint('table_maker', __name__, template_folder='templates')
 # Helper methods
 #-----------------------------------------------------------------------------#
 def unicode_csv_reader(unicode_csv_data, dialect=csv.excel, **kwargs):
+    """Unicode CSV Reader.
+       Taken from the https://docs.python.org/2/library/csv.html#examples
+    """
     # csv.py doesn't do Unicode; encode temporarily as UTF-8:
     csv_reader = csv.reader(utf_8_encoder(unicode_csv_data),
                             dialect=dialect, **kwargs)
@@ -32,12 +35,23 @@ def unicode_csv_reader(unicode_csv_data, dialect=csv.excel, **kwargs):
 
 
 def utf_8_encoder(unicode_csv_data):
+    """utf_8_encoder
+       Taken from the https://docs.python.org/2/library/csv.html#examples
+    """
     for line in unicode_csv_data:
         yield line.encode('utf-8')
 
 
 def process_string(csv_string, table_align='l'):
-    """Take a raw csv string and convert it into a table"""
+    """Take a raw csv string and convert it into a table.
+    
+       :param csv_string: A CSV string to be converted into a table.
+       :param table_align: The alignment for the contents of the table.
+                           Valid arguments are 'l', 'c' and 'r'.
+                           Optional, Defaults to 'l'
+
+       :returns: An Ascii table of the passed in CSV data.
+    """
     csv_io = StringIO(csv_string.strip())
 
     dialect = csv.Sniffer().sniff(csv_io.read(1024))
@@ -81,6 +95,14 @@ class csv_form(Form):
 #-----------------------------------------------------------------------------#
 @table_maker.route('/', methods=['GET', 'POST'])
 def index():
+    """Index for table_maker
+       Will validate the form if it is valid will try and convert the csv to
+       a table and return a rendered results page. If the form is invaid or if
+       the request is a get request will return the form to be completed by the
+       user.
+
+       :returns: A form asking for CSV data or an ascii table.
+    """
     form = csv_form()
 
     if form.validate_on_submit():
