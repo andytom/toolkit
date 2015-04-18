@@ -131,5 +131,5 @@ def index():
                          attachment_filename=filename,
                          as_attachment=True)
 
-    current_app.logger.info('Rendering decode template.')
+    current_app.logger.info('Rendering decode template')
     return render_template('base64_utils/decode.html', form=form)
