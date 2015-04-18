@@ -22,6 +22,17 @@ app.register_blueprint(table_maker, url_prefix='/table_maker')
 app.register_blueprint(mkd_preview, url_prefix='/mkd_preview')
 
 
+if not app.debug:
+    import logging
+    stream_handler = logging.StreamHandler()
+    stream_handler.setFormatter(logging.Formatter(
+        '[%(asctime)s] %(levelname)s: %(message)s [in %(pathname)s:%(lineno)d]'
+    ))
+    app.logger.addHandler(stream_handler)
+    app.logger.setLevel(logging.DEBUG)
+    app.logger.info('Application started')
+
+
 #-----------------------------------------------------------------------------#
 # Hooks
 #-----------------------------------------------------------------------------#
@@ -55,6 +66,7 @@ def index():
 
         :returns: The rendered index template.
     """
+    app.logger.debug('Rendering index page')
     return render_template('index.html')
 
 
@@ -66,4 +78,5 @@ def page_not_found(error):
 
         :returns: The rendered 404 error template.
     """
+    app.logger.debug('Rendering 404 page')
     return render_template('404.html'), 404

@@ -7,7 +7,7 @@
     :copyright: (c) 2015 by Thomas O'Donnell.
     :license: BSD, see LICENSE for more details.
 """
-from flask import Blueprint, render_template, g
+from flask import Blueprint, render_template, g, current_app
 
 
 mkd_preview = Blueprint('mkd_preview', __name__, template_folder='templates')
@@ -33,5 +33,10 @@ A link to the [Github Flavoured Markdown documentaion](https://help.github.com/a
 
 @mkd_preview.route('/')
 def index():
+    """Index page for mkd_preview.
+
+       :returns: The rendered index template.
+    """
+    current_app.logger.debug('Rendering mkd_preview index page')
     return render_template('mkd_preview/index.html',
                            content=EXAMPLE_MARKDOWN_TEXT)

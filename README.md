@@ -1,16 +1,15 @@
 # Toolkit
-
 [![Build Status](https://travis-ci.org/andytom/toolkit.svg?branch=master)](https://travis-ci.org/andytom/toolkit)
 
-## Overview
 
+## Overview
 Toolkit is a basic collection of small tools that might be useful.
 
 It is based on the Python [Flask framework](http://flask.pocoo.org/) and uses
 [PureCSS](http://purecss.io/) to look nice.
 
-## Running toolkit
 
+## Running toolkit
 You can get toolkit up and running on [localhost:5000](http://localhost:5000/)
 using the following instructions. The following assumes you have python,
 pip, virtualenv, and virtualenvwrapper installed.
@@ -25,7 +24,6 @@ $ python manage.py runserver
 
 
 ## Testing
-
 You can run all the test locally using manage.py.
 
 ~~~
@@ -41,12 +39,12 @@ These tests are also run automatically by [TravisCI](https://travis-ci.org/andyt
 - [ ] Add Doc strings
  - [x] app
  - [ ] base64_utils
- - [ ] mkd_preview
+ - [x] mkd_preview
  - [ ] table_maker
 - [ ] Add logging
- - [ ] app
+ - [x] app
  - [ ] base64_utils
- - [ ] mkd_preview
+ - [x] mkd_preview
  - [ ] table_maker
 - [ ] Custom Validators
  - [ ] Table Maker
