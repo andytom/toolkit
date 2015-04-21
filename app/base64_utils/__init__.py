@@ -61,8 +61,8 @@ def guess_extention(bin_data):
     PREFERED_EXTS = ['.txt']
     for prefered_ext in PREFERED_EXTS:
         if prefered_ext in ext_list:
-            current_app.logger.debug('Prefered extention '
-                '{} is available using that'.format(prefered_ext))
+            current_app.logger.debug('Using prefered extentions '
+                                     '{}'.format(prefered_ext))
             return prefered_ext
 
     # If not use the first in the list
@@ -72,7 +72,7 @@ def guess_extention(bin_data):
 
 def base64_to_stringio(base64_string, filename=None):
     """Decode the Base64 string and write it to a stringIO
-    
+
        :param base64_string: The binary data of as file encoded in base64.
        :param filename: The filename of the encoded file, Optional if not
                         if not passed a random string will be generated and
@@ -120,7 +120,6 @@ def index():
                  as an attachement.
     """
     form = decode_form()
-
 
     if form.validate_on_submit():
         current_app.logger.info('Submitted Form is valid trying to process it')
