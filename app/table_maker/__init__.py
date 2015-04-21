@@ -12,7 +12,7 @@ from StringIO import StringIO
 from flask import Blueprint, render_template, current_app
 from flask_wtf import Form
 import prettytable
-from wtforms import TextField, TextAreaField, SelectField
+from wtforms import TextAreaField, SelectField, BooleanField
 from wtforms.validators import Required
 
 
@@ -42,13 +42,15 @@ def utf_8_encoder(unicode_csv_data):
         yield line.encode('utf-8')
 
 
-def process_string(csv_string, table_align='l'):
+def process_string(csv_string, table_align='l', add_header=True):
     """Take a raw csv string and convert it into a table.
 
        :param csv_string: A CSV string to be converted into a table.
        :param table_align: The alignment for the contents of the table.
                            Valid arguments are 'l', 'c' and 'r'.
                            Optional, Defaults to 'l'
+       :param add_header: If True the first row of the CSV data will be used as
+                          a header. Optional, Defaults to True.
 
        :returns: An Ascii table of the passed in CSV data.
     """
@@ -66,8 +68,11 @@ def process_string(csv_string, table_align='l'):
     reader = unicode_csv_reader(csv_io, dialect)
 
     table = prettytable.PrettyTable()
+    table.header = add_header
 
-    table.field_names = [x.strip() for x in reader.next()]
+    if add_header:
+        current_app.logger.debug('add_header is true so first row is a header')
+        table.field_names = [x.strip() for x in reader.next()]
 
     for row in reader:
         table.add_row([x.strip() for x in row])
@@ -90,6 +95,8 @@ class csv_form(Form):
                                 ('c', 'Centre'),
                                 ('r', 'Right')
                               ])
+    add_header = BooleanField('Use Header', default='checked',
+                              false_values=('false', '', 'n', 'f'))
 
 
 #-----------------------------------------------------------------------------#
@@ -109,7 +116,9 @@ def index():
 
     if form.validate_on_submit():
         current_app.logger.info('Form is valid, building table')
-        table = process_string(form.csv_string.data, form.table_align.data)
+        table = process_string(form.csv_string.data,
+                               form.table_align.data,
+                               form.add_header.data)
         current_app.logger.info('Built table, sending response page')
         return render_template('table_maker/result.html', table=table)
 

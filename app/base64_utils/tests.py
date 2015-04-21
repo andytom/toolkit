@@ -100,7 +100,7 @@ class AppTestCase(BaseTestCase):
         # Check the correct filename is in the Content-Disposition
         if send_filename:
             self.assertEqual('attachment; filename={}'.format(filename),
-                rv.headers['Content-Disposition'])
+                             rv.headers['Content-Disposition'])
 
     def test_page_load(self):
         rv = self.client.get("/")

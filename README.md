@@ -41,7 +41,8 @@ These tests are also run automatically by [TravisCI](https://travis-ci.org/andyt
 - [ ] Custom Validators
  - [ ] Table Maker
  - [ ] Base64 Utils
-
+- [ ] Move Logging settings into config.py
+- [ ] Deployment to Heroku instructions
 
 ## License
 Toolkit is licensed under the BSB license (See LICENSE) for more details.
