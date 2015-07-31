@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 """
     manage.py
@@ -8,6 +9,7 @@
     :license: BSD, see LICENSE for more details.
 """
 import os
+import sys
 import unittest
 from flask.ext.script import Manager, Server
 from app import app
@@ -31,6 +33,9 @@ def runtests():
     app_dir = os.path.join(parent_dir, 'app')
     tests = unittest.TestLoader().discover(app_dir)
     results = unittest.TextTestRunner(verbosity=2).run(tests)
+
+    ret = not results.wasSuccessful()
+    sys.exit(ret)
 
 
 if __name__ == "__main__":

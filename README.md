@@ -42,7 +42,7 @@ These tests are also run automatically by [TravisCI](https://travis-ci.org/andyt
  - [ ] Table Maker
  - [ ] Base64 Utils
 - [ ] Move Logging settings into config.py
-- [ ] Deployment to Heroku instructions
+- [ ] Deployment to Heroku instructions and/or [Deploy Button](https://devcenter.heroku.com/articles/heroku-button)
 
 ## License
 Toolkit is licensed under the BSB license (See LICENSE) for more details.
