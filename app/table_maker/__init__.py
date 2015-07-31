@@ -90,11 +90,9 @@ class csv_form(Form):
     # TODO - Write a validator for the CSV string
     csv_string = TextAreaField('CSV string', validators=[Required()])
     table_align = SelectField('Table Alignment',
-                              choices=[
-                                ('l', 'Left'),
-                                ('c', 'Centre'),
-                                ('r', 'Right')
-                              ])
+                              choices=[('l', 'Left'),
+                                       ('c', 'Centre'),
+                                       ('r', 'Right')])
     add_header = BooleanField('Use Header', default='checked',
                               false_values=('false', '', 'n', 'f'))
 
