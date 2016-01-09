@@ -1,9 +1,13 @@
 language: python
 python:
   - "2.7"
-# command to install dependencies
-install: "pip install -r requirements.txt"
+cache: pip
+
 # command to run tests
-script: python manage.py runtests
+script:
+ - ./manage.py runtests
+ - pep8 --statistics --show-source
+
+# Don't send email notifications
 notifications:
   email: false

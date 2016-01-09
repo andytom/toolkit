@@ -28,7 +28,8 @@ for i in range(10):
 
 ## Another Sub Title
 
-A link to the [Github Flavoured Markdown documentaion](https://help.github.com/articles/github-flavored-markdown/)."""
+A link to the Markdown
+[documentaion](https://help.github.com/articles/github-flavored-markdown/)."""
 
 
 @mkd_preview.route('/')
